@@ -5,18 +5,25 @@ date: "January 12, 2015"
 output: html_document
 ---
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+### Raw Data
+The raw data is in the file **getdata-projectfiles-UCI HAR Dataset.zip**.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+### Cleaning Script
+**run_analysis.R** will:
 
-```{r}
-summary(cars)
+- check for the existence of the raw data file
+- unzip the file
+- make sure the data directory it expects is there
+- transform the data
+- write **tidy data set** to the file summary.csv
+
+### Tidy Data Set
+Viewing summary.csv tidy data set:
+
+```
+View(read.csv("summary.csv"))
 ```
 
-You can also embed plots, for example:
+### Code Book
 
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+The file **CodeBook.md** describes how the tidy data set is created.

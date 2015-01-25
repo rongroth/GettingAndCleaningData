@@ -25,6 +25,8 @@ More detailes can be found in the data set's README.txt and the feature files it
 
 The run_analysis.R script contains the following functions:
 
+**checkForRawDataFile(rawDataZipFile)** - makes sure the raw data file is in the current working directory
+
 **checkCorrectLocation(dirName)** - makes sure the expected data directory exists
 
 **readData(dirName, dataType)** - works for both train and test data. Performs all reading and combining data to create separate train and test data frames

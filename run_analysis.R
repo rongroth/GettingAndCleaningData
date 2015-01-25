@@ -2,6 +2,14 @@
 
 library(plyr)
 
+## make sure the raw data file is in the current working directory
+checkForRawDataFile <- function(filename) {
+    if(!file.exists(filename)) {
+        msg <- paste("please run script in directory containing the raw data file:", filename)
+        stop(msg)
+    }
+}
+
 ## make sure we are we we need to be
 checkCorrectLocation <- function(dirName) {
     # Make sure the "UCS HAR Dataset" directory is in the current dir
@@ -104,6 +112,9 @@ transformToDescriptive <- function(names) {
 run_analysis <- function() {
     rawDataZipFile <- "getdata-projectfiles-UCI HAR Dataset.zip"
     dataDir <- "UCI HAR Dataset"
+    
+    print("checking for raw data zip file")
+    checkForRawDataFile(rawDataZipFile)
 
     print("unzip the raw data zip file")
     unzip(rawDataZipFile)

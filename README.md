@@ -8,6 +8,8 @@ output: html_document
 #### Raw Data
 The raw data is in the file **getdata-projectfiles-UCI HAR Dataset.zip**.
 
+The raw data is from: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
 #### Cleaning Script
 
 ```
@@ -28,7 +30,13 @@ The file **CodeBook.md** describes how the tidy data set is created and its feat
 
 #### Tidy Data Set
 
-Will be created by running the script. It will be written to **summary.txt**.
+Will be created by sourcing the script. It will be written to **summary.txt**.
+
+Viewing **summary.txt** tidy data set:
+
+```
+View(read.table("summary.txt"))
+```
 
 #### GitHub Repository Location
 

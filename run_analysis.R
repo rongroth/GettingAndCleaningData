@@ -129,7 +129,8 @@ run_analysis <- function() {
     print("computing mean for subjects and their activity")
     summaryDF <- ddply(msDF, .(subject, activity), numcolwise(mean))
     
-    write.csv(summaryDF, file = "summary.csv")
+    print("writing summary.txt")
+    write.table(summaryDF, file = "summary.txt", row.name=FALSE)
 }
 
 # cause script to run on source()
